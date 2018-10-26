@@ -1,13 +1,56 @@
 
 body {
 	background-image: url("../assets/img/table-bg.jpg");
+
+	.dealt-cards, .handed-cards {
+		text-align: center;
+		margin-top: 150px;
+	}
+
+	.handed-cards {
+		position: relative;
+	}
+
+	.card {
+  		display: inline-block;
+  		margin: 5px;
+	}
+
+	.handed-cards .card {
+		position: absolute;
+	}
+
+	.card1 {
+    	z-index: 2;
+    	left: -130px;
+    	right: 130px;
+    	&:hover {
+   			z-index: 1000;
+   			position:relative;
+    		top: -30px;
+    	}
+	}
+
+	.card2 {
+		z-index: 1;
+    	right: 0;
+    	left: 0;
+     	&:hover {
+   			z-index: 1000;
+   			position:relative;
+    		top: -30px;
+    	}
+	}
+
+	.card3 {
+		left: 130px;
+    	right: -130px;
+     	&:hover {
+   			z-index: 3;
+   			position:relative;
+    		top: -30px;
+    	}
+	}
+
 }
 
-.box-set {
-	text-align: center;
-}
-
-.box {
-  display: inline-block;
-  margin: 5px;
-}
