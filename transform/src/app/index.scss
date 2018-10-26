@@ -1,0 +1,111 @@
+/**
+ *  Do not remove the comment below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+html {
+    font-family: 'Helvetica Light', sans-serif;
+}
+
+body {
+
+    background-color: #fff;
+}
+
+/**
+ *  Do not remove the comment below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector
+
+.cool-fan-system {
+    position: relative;
+}
+
+.switch {
+    height: 57px;
+    margin: 23px auto;
+    position: relative;
+    width: 127px;
+    z-index: 2;
+
+    label {
+        background: #e9513a;
+        color: #c72f18;
+        border-radius: 2px;
+        display: block;
+        height: 100%;
+        position: relative;
+        transition: all .15s ease;
+        width: 100%;
+
+        div {
+            background: #fff;
+            border-radius: 2px;
+            display: block;
+            height: 45px;
+            left: 6px;
+            position: absolute;
+            top: 6px;
+            transition: all .15s ease;
+            width: 53px;
+            z-index: 3;
+            &:before {
+                background: #d3d3d3;
+                bottom: 0;
+                box-shadow: -6px 0 0 0 #d3d3d3,
+                6px 0 0 0 #d3d3d3;
+                content: '';
+                display: block;
+                height: 15px;
+                left: 0;
+                margin: auto;
+                position: absolute;
+                right: 0;
+                top: 0;
+                transition: all .15s ease;
+                width: 3px;
+            }
+        }
+    }
+}
+
+.switch .switch-on {
+    left: 20px;
+}
+
+.switch .switch-off {
+    left: 51px;
+}
+
+/* Checked States */
+.switch:hover {
+    label {
+        background: #2fca6c;
+        color: #13ad4f;
+    }
+    div {
+        left: 67px;
+    }
+}
+
+.fan {
+    display: inline-block;
+    width: 30%;
+    height: 300px;
+    position: relative;
+    top: 50px;
+}
+
+.moving-space {
+    display: inline-block;
+    position: relative;
+    width: 69%;
+    left: 30%;
+    .moving-guy {
+        width: 300px;
+    }
+}
