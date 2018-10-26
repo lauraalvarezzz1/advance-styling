@@ -1,19 +1,148 @@
 
 /* Selection */
-
+	::selection {
+		background-color: darkblue;
+		color: white;
+	}
 
 /* h1 selectors */
+	h1 {
+		text-transform: uppercase;
 
+		&::before {
+		content: "Lesson 4: ";
+		color: lightblue;
+		}
+	}
 
 /* a selectors */
-
+	li a {
+    	text-decoration: none;
+    	color: grey;
+	}
 
 /* List selectors */
+ 	ul li {
+    	list-style: none;
+    	color: darkgrey;
 
+    	&::first-letter {
+    		text-transform: uppercase;
+    	}
+
+    	&:first-child {
+    		text-transform: uppercase;
+    		font-size: 16px;
+    		margin-bottom: 5%;
+    		padding: 5% 0;
+    		border-bottom: 1px solid blue;
+
+    		a {
+    			color: lightblue;
+    		}
+
+    		&::after {
+    			content: ":";
+    			color: darkblue;
+    			font-weight: 900;
+    		}
+    	}
+
+    	&:nth-child(2n+3) {
+    		padding: 5%;
+    		font-weight: 900;
+    	}
+	}
 
 /* Paragraph selectors */
 
+	p {
+		&::first-letter {
+    		text-transform: uppercase;
+    	}
+
+    	&::first-line { 
+    		background-color: lightgrey;
+		}
+
+		&:last-child {
+			margin-bottom: 5%;
+			padding-bottom: 5%;
+			border-bottom: 1px solid black;
+		}
+
+		&+p {
+			text-transform: uppercase;
+
+			&::first-letter {
+    			font-size: 20px;
+    			color: lightblue;
+    			font-weight: 900;
+    			letter-spacing: 3px;
+    		}
+
+		}
+
+		&~p {
+			color: darkblue;
+		}
+	}
 
 /* Table selectors */
+
+	table {
+		border-collapse: collapse;
+		width: 100%;
+		margin-bottom: 5%;
+
+		thead {
+			font-size: 20px;
+			border-bottom: 1px solid blue;
+			color: lightblue;
+			font-weight: 100;
+
+			th {
+				font-weight: 100;
+
+    			&::first-letter {
+    				text-transform: uppercase;
+    			}
+
+    			&:nth-child(even){
+    				font-weight: 900;
+    			}
+    		}
+
+		}
+
+		tbody {
+			tr {
+				&:nth-child(3) {
+					td:nth-child(even){
+						background-color: darkblue;
+						color: white;
+					}
+				}
+			}
+		}
+
+
+		tbody tr td,
+		tfoot tr td{
+			&::first-letter {
+    				text-transform: uppercase;
+    			}
+
+    		&:nth-child(odd){
+    				text-align: center;
+    				background-color: lightgrey;
+    			}
+
+    		&:nth-child(even){
+    				text-align: right;
+    			}
+
+		}
+	}
 
 
