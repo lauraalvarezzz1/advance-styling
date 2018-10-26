@@ -16,24 +16,22 @@ body {
 		position: relative;
     	margin-top: 50px;
     	img {
-    		padding-bottom: 30px;
+    		position: absolute;
+			margin-bottom: 35px;
+			padding-bottom: 5px;
     	}
 	}
 
 	.card {
   		display: inline-block;
   		margin: 5px;
-  		padding-bottom: 20px;
-	}
-
-	.handed-cards img {
-		position: absolute;
 	}
 
 	.card1 img{
     	z-index: 2;
     	left: 410px;
     	&:hover {
+    		padding-bottom: 45px;
    			z-index: 3;
     		top: -30px;
     	}
@@ -43,14 +41,16 @@ body {
 		z-index: 1;
     	left: 550px;
      	&:hover {
+     		padding-bottom: 45px;
    			z-index: 3;
     		top: -30px;
     	}
 	}
 
 	.card3 img{
-		right: 400px;
+		left: 690px;
      	&:hover {
+     		padding-bottom: 45px;
    			z-index: 3;
     		top: -30px;
     	}
