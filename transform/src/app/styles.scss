@@ -1,37 +1,76 @@
-
 .moving-space {
-	margin-top: 300px;
+   margin-top: 300px;
 
-	.moving-line {
-		border-bottom: 4px solid black;
-		border-bottom-width: medium;
-		margin-top: -4px;
-	}
+   .moving-line {
+       border-bottom: 4px solid black;
+       border-bottom-width: medium;
+       margin-top: -4px;
+   }
+
+   .fans .fan {
+       width: 50px;
+       height: 50px;
+       border-radius: 50%;
+       background-color: black;
+
+       &:nth-child(odd){
+           transform: rotateY(70deg);
+
+           &:last-child {
+               position: absolute;
+               right: 53px;
+               top: -90px;
+
+               div {
+                   width: 20px;
+                   height: 100px;
+                   background-color: gainsboro;
+               }
+           }
+
+           &:first-child {
+               position: absolute;
+               left: -300px;
+               top: -90px;
+           }
+       }
+
+       &:nth-child(even){
+           transform: rotateX(70deg);
+           top: 230px;
+           right: 250px;
+           position: absolute;
+       }
+
+   }
 }
 
 .switch:hover + .moving-space .moving-guy {
-	animation: guy 5s infinite;
-	position: relative;
+   animation: guy 4s infinite linear;
+   position: relative;
 }
 
 @keyframes guy {
-  0% {
-  transform: rotate(0deg) ; 
-  left:0;
-    
-  }
-  50% {
-  	transform: rotate(0deg) ; 
-  	left: 500px;
-  }
+   0% {
+       transform: rotate(0deg);
+       left:0;
 
-  75% {
-  	transform: rotate(0deg) ; 
-  	left: 500px;
-  }
+   }
+   50% {
+       transform: rotate(0deg);
+       left: 500px;
+       top: 0px;
+   }
 
-  100% {
-  	transform: rotate(360deg) ; 
-  	left: 500px;
-  }
+   75% {
+       transform: rotate(180deg);
+       left: 200px;
+       top: -400px;
+   }
+
+   100% {
+       transform: rotate(360deg);
+       left: 0px;
+       top: 0px;
+   }
 }
