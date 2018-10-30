@@ -1,0 +1,129 @@
+.moving-space {
+   margin-top: 300px;
+
+   .moving-line {
+       border-bottom: 4px solid black;
+       border-bottom-width: medium;
+       margin-top: -4px;
+   }
+
+   .fans .fan {
+   		.circle {
+   		 	width: 50px;
+       		height: 50px;
+       		border-radius: 50%;
+       		background-color: black;
+       		position: absolute;
+       		z-index: 1;
+   		}
+      
+
+       &:nth-child(odd){
+       transform: rotateY(75deg);
+           &:last-child {
+                left: 200px;
+    			top: -400px;
+               
+           }
+
+           &:first-child {
+                right: 300px;
+    			top: -400px;
+
+           }
+       }
+
+       &:nth-child(even){
+            top: -70px;
+    		left: 350px;
+    		transform: rotateX(75deg);
+       }
+
+       div {
+           position: absolute;
+    		width: 30px;
+    		height: 400px;
+    		left: 50%;
+    		top: 50%;
+    		transform: translate(-50%, -50%);
+    		background-color: gainsboro;
+
+    		&:nth-child(3) {
+    			transform: rotate(90deg);
+    			top: -17%;
+    		}
+
+    		&:nth-child(4) {
+    			transform: rotate(45deg);
+    			top: -20%;
+    		}
+
+    		&:last-child {
+    			transform: rotate(-45deg);
+    			top: -15%;
+    		}
+       }
+
+   }
+}
+
+.switch:hover + .moving-space .fans .fan {
+
+	&:nth-child(even) {
+ 		animation: faneven 1s infinite linear;
+	}
+
+	&:nth-child(odd) {
+ 		animation: fanodd 1s infinite linear;
+	}
+}
+
+.switch:hover + .moving-space .moving-guy {
+   animation: guy 4s infinite linear;
+   position: relative;
+}
+
+@keyframes fanodd {
+   0% {
+       transform: rotateY(75deg) rotateZ(0deg);
+   }
+
+   100% {
+       transform: rotateY(75deg) rotateZ(-360deg);
+   }
+}
+
+@keyframes faneven {
+   0% {
+       transform: rotateX(75deg) rotateZ(0deg);
+   }
+
+   100% {
+       transform: rotateX(75deg) rotateZ(-360deg);
+   }
+}
+
+@keyframes guy {
+   0% {
+       transform: rotate(0deg);
+       left:0;
+
+   }
+   50% {
+       transform: rotate(0deg);
+       left: 500px;
+       top: 0px;
+   }
+
+   75% {
+       transform: rotate(180deg);
+       left: 200px;
+       top: -400px;
+   }
+
+   100% {
+       transform: rotate(360deg);
+       left: 0px;
+       top: 0px;
+   }
+}
