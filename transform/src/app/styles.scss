@@ -8,46 +8,99 @@
    }
 
    .fans .fan {
-       width: 50px;
-       height: 50px;
-       border-radius: 50%;
-       background-color: black;
+   		.circle {
+   		 	width: 50px;
+       		height: 50px;
+       		border-radius: 50%;
+       		background-color: black;
+       		position: absolute;
+       		z-index: 1;
+   		}
+      
 
        &:nth-child(odd){
-           transform: rotateY(70deg);
-
+       transform: rotateY(75deg);
            &:last-child {
-               position: absolute;
-               right: 53px;
-               top: -90px;
-
-               div {
-                   width: 20px;
-                   height: 100px;
-                   background-color: gainsboro;
-               }
+                left: 200px;
+    			top: -400px;
+               
            }
 
            &:first-child {
-               position: absolute;
-               left: -300px;
-               top: -90px;
+                right: 300px;
+    			top: -400px;
+
            }
        }
 
        &:nth-child(even){
-           transform: rotateX(70deg);
-           top: 230px;
-           right: 250px;
+            top: -70px;
+    		left: 350px;
+    		transform: rotateX(75deg);
+       }
+
+       div {
            position: absolute;
+    		width: 30px;
+    		height: 400px;
+    		left: 50%;
+    		top: 50%;
+    		transform: translate(-50%, -50%);
+    		background-color: gainsboro;
+
+    		&:nth-child(3) {
+    			transform: rotate(90deg);
+    			top: -17%;
+    		}
+
+    		&:nth-child(4) {
+    			transform: rotate(45deg);
+    			top: -20%;
+    		}
+
+    		&:last-child {
+    			transform: rotate(-45deg);
+    			top: -15%;
+    		}
        }
 
    }
 }
 
+.switch:hover + .moving-space .fans .fan {
+
+	&:nth-child(even) {
+ 		animation: faneven 1s infinite linear;
+	}
+
+	&:nth-child(odd) {
+ 		animation: fanodd 1s infinite linear;
+	}
+}
+
 .switch:hover + .moving-space .moving-guy {
    animation: guy 4s infinite linear;
    position: relative;
+}
+
+@keyframes fanodd {
+   0% {
+       transform: rotateY(75deg) rotateZ(0deg);
+   }
+
+   100% {
+       transform: rotateY(75deg) rotateZ(-360deg);
+   }
+}
+
+@keyframes faneven {
+   0% {
+       transform: rotateX(75deg) rotateZ(0deg);
+   }
+
+   100% {
+       transform: rotateX(75deg) rotateZ(-360deg);
+   }
 }
 
 @keyframes guy {
