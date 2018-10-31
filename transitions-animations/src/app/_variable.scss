@@ -16,15 +16,57 @@ $dark-blue: #4381b2;
 $blue: #12475f;
 
 /* ADD header top animation from 0 to 200px*/
-
+@keyframes header {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 200px;
+  }
+}
 
 /* ADD container left animation from -1000 to 0*/
+@keyframes container {
+  0% {
+    left: -1000px;
+  }
+  100% {
+    left: 0;
+  }
+}
 
 
 /* ADD btn opacity animation from 0 to 1*/
+@keyframes button {
+  0% {
+  	opacity: 0;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: initial;
+  }
+}
 
 
 /* ADD move-eyes should be a transform animation make the eyes move
 starting from center to bottom left to center to top right */
+
+@keyframes eyes {
+    0% {
+        transform: translateX(50px) translateY(-40px) skewX(10deg) skewY(2deg);
+    }
+    50% {
+        transform: translateX(0) translateY(0) skewX(0) skewY(0);
+    }
+    100% {
+    	transform: translateX(-50px) translateY(40px) skewX(10deg) skewY(2deg);
+    }
+}
+
+
 
 
