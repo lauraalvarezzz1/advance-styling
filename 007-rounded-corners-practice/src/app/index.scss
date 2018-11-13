@@ -10,6 +10,43 @@ html {
 }
 
 body {
+    background-color: #cccccc;
+
+    section {
+        background-color: #aaaaaa;
+        border-radius: 100px 0;
+        width: 50%;
+        margin: 200px auto;
+        height: 200px;
+        box-shadow: 10px 10px 5px grey;
+
+        .card-container .card-inner-container{
+            background-color: #b44e4c;
+            border-radius: 80px;
+            display: flex;
+            justify-content: space-around;
+            margin: 50px;
+            width: 350px;
+
+            .figure {
+                background-color: #d26a64;
+                color: white;
+                width: 150px;
+
+                &.figure-left {
+                    border-radius: 100px 100px 0;
+
+                    p{
+                        text-transform: uppercase;
+                    }
+                }
+
+                &.figure-right{
+                    border-radius: 100px 100px 100px 0;
+                }
+            }
+        }
+    }
 }
 
 /**
