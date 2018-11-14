@@ -15,34 +15,68 @@ body {
     section {
         background-color: #aaaaaa;
         border-radius: 100px 0;
-        width: 50%;
+        width: 46%;
         margin: 200px auto;
-        height: 200px;
+        height: 210px;
         box-shadow: 10px 10px 5px grey;
 
-        .card-container .card-inner-container{
-            background-color: #b44e4c;
-            border-radius: 80px;
-            display: flex;
-            justify-content: space-around;
-            margin: 50px;
-            width: 350px;
+        .card-container {
+            display: inline-block;
 
-            .figure {
-                background-color: #d26a64;
-                color: white;
-                width: 150px;
+            .card-inner-container {
+                background-color: #b44e4c;
+                border-radius: 80px;
+                display: flex;
+                justify-content: space-around;
+                margin: 20px;
+                width: 320px;
+                height: 162px;
+                padding: 5px;
 
-                &.figure-left {
-                    border-radius: 100px 100px 0;
+                .figure {
+                    background-color: #d26a64;
+                    color: white;
+                    width: 150px;
+                    margin: 5px -10px;
+                    padding-top: 40px;
 
-                    p{
-                        text-transform: uppercase;
+                    &.figure-left {
+                        border-radius: 100px 100px 0;
+
+                        p {
+                            text-transform: uppercase;
+                            font-size: 14px;
+                            font-weight: 900;
+                            margin: 0;
+                            padding-left: 25px;
+                        }
+
+                        address {
+                            padding-left: 25px;
+                            font-size: 10px;
+                        }
                     }
-                }
 
-                &.figure-right{
-                    border-radius: 100px 100px 100px 0;
+                    &.figure-right {
+                        border-radius: 100px 100px 100px 0;
+                        text-align: right;
+
+                        p {
+                            margin: 0;
+                            padding-right: 25px;
+
+                            &.name{
+                                font-size: 14px;
+                            }
+
+                            &.position,
+                            &.phone,
+                            &.email {
+                                font-size: 10px;
+                            }
+                        }
+
+                    }
                 }
             }
         }
