@@ -18,6 +18,8 @@
   background-color: $blue;
   border-radius: 50%;
   width: 130px;
+  box-shadow: 0 0 20px darkslategrey;
+
   &:after,
   &:before {
     content: "";
@@ -47,6 +49,14 @@
   border-radius: 50%;
 
   /* Create a rainbow box shadow using inset shadows, use the variables that we have in _variables.scss */
+  box-shadow:
+    inset $x-offset (-$y-offset) $shadow-blur $shadow-spread $red,
+    inset (-$x-offset) (-$y-offset) $shadow-blur $shadow-spread $yellow,
+    inset 0 $shadow-depth $shadow-blur $shadow-spread $blue,
+    inset (-$x-offset) $y-offset $shadow-blur $shadow-spread $green,
+    inset $x-offset $y-offset $shadow-blur $shadow-spread $purple,
+    inset 0 (-$shadow-depth) $shadow-blur $shadow-spread $orange,
+;
 
   height: 150px;
   margin: auto;
@@ -61,6 +71,7 @@
   border-top-left-radius: 60px 90px;
 
   /* Add inset box shadow with medium-black color, and outset box shadow with medium-black color */
+  box-shadow: inset 3px 5px 0 20px $medium-black, 0 0 20px 43px $medium-black;
 
   margin: 0 auto;
   height: 100px;
@@ -71,6 +82,7 @@
 .control-group {
 
   /* Add outset box shadow with black color */
+  box-shadow: 0 0 5px black;
 
   display: inline-block;
   padding: 10px;
@@ -171,6 +183,7 @@
     border: 0.3px solid $gray;
 
     /* Add inset and outset box shadows with gray color */
+    box-shadow: -10px -10px 4px grey;
 
     height: $height-full;
     padding: 10px;
@@ -205,6 +218,7 @@
   border-radius: 5px;
 
   /* Add inset and outset box shadows with light-brown and dark-brown color */
+  box-shadow: inset 0 0 10px 0 $light-brown, 0 0 20px 2px $dark-brown;
 
   display: inline-block;
   height: 40px;
@@ -234,6 +248,7 @@
     background-color: $white;
 
     /* Add outset box shadow with medium-black color */
+    box-shadow: 0 0 10px $medium-black;
 
     display: none;
     min-width: $width-full;
@@ -242,6 +257,7 @@
     a {
 
       /* Add inset and outset box shadows with light-brown and dark-brown color */
+      box-shadow: inset 0 0 0 1px $light-brown, 0 0 0 1px $dark-brown;
 
       color: $black;
       display: block;
@@ -278,6 +294,7 @@
       border-radius: 50%;
 
       /* Add outset box shadow with dark-gray color */
+      box-shadow: 0 8px 40px $dark-gray;
 
       filter: blur(5px);
       height: 90%;
